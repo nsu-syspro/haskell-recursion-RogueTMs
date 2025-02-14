@@ -1,14 +1,21 @@
 {-# OPTIONS_GHC -Wall #-}
+-- Note: the above pragma enables all warnings
 
 module Task3 where
 
-type Peg = String
+-----------------------
+-- Helper type synonyms
 
+type Peg = String
 type Move = (Peg, Peg)
 
+-----------------------
+
+-- Usage examples
+--
+-- >>> hanoi 2 "a" "b" "c"
+-- [("a","c"),("a","b"),("c","b")]
+
 hanoi :: Int -> Peg -> Peg -> Peg -> [Move]
-hanoi 0 _ _ _ = []
-hanoi n fromPeg toPeg sparePeg =
-  hanoi (n - 1) fromPeg sparePeg toPeg
-    ++ [(fromPeg, toPeg)]
-    ++ hanoi (n - 1) sparePeg toPeg fromPeg
+hanoi = error "TODO: define hanoi"
+
